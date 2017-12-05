@@ -36,6 +36,13 @@ class Student
 
   end
 
+  def self.create(name:, grade:)
+    self.create_table
+    new_student = self.new(name, grade)
+    new_student.save
+    new_student
+  end
+
 
   # Remember, you can access your database connection anywhere in this class
   #  with DB[:conn]
